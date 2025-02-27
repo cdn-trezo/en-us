@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-white text-gray-900 font-sans;
+  overflow-x: hidden;
+}
+
+.gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-dark-green to-accent-green;
+}
+
+.slide-container {
+  scroll-snap-type: x mandatory;
+}
+
+.slide {
+  scroll-snap-align: start;
+}
+
+.animated-border {
+  position: relative;
+}
+
+.animated-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #005C2E, #00D166);
+  transition: width 0.3s ease;
+}
+
+.animated-border:hover::after {
+  width: 100%;
+}
+
+.glass-card {
+  @apply bg-white bg-opacity-70 backdrop-blur-lg rounded-xl shadow-lg;
+}
